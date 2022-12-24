@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<conio.h>
+#include<dos.h>
+#include<graphics.h>
+void main()
+{
+int x1,y1,x2,y2,tx,ty,xt1,xt2,yt1,yt2;
+int gd=DETECT,gm=0;
+detectgraph(&gd,&gm);
+initgraph(&gd,&gm,"c:\\tc\\bgi");
+printf("Enter line end point(x1,y1) and (x2,y2)");
+scanf("%d %d %d %d",&x1,&y1,&x2,&y2);
+printf("Enter translation vector(tx,ty) ");
+scanf("%d %d",&tx,&ty);
+printf("\noriginal line");
+line(x1,y1,x2,y2);
+setcolor(YELLOW);
+xt1=x1+tx;
+xt2=x2+tx;
+yt1=y1+ty;
+yt2=y2+ty;
+printf("\nTranslated linein yellow color");
+line(xt1,yt1,xt2,yt2);
+printf("\nEnter any key");
+getch();
+cleardevice();
+printf("\nTranslated polygon RED color");
+rectangle(x1,y1,x2,y2);
+setcolor(RED);
+rectangle(xt1,yt1,xt2,yt2);
+getch();
+closegraph();
+}

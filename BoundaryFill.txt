@@ -1,0 +1,35 @@
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+
+    void    bfill(int x,int y,int fc,int bc)
+     {
+     int current;
+     current=getpixel(x,y);
+     if((current!=bc)&&(current!=fc))
+     {
+	//setcolor(fc);
+	putpixel(x,y,fc);
+	delay(5);
+	bfill(x+1,y,fc,bc);
+	bfill(x-1,y,fc,bc);
+	bfill(x,y+1,fc,bc);
+	bfill(x,y-1,fc,bc);
+
+      }
+    }
+    int  main(void)
+   {
+    /* request auto detection */
+    int xc,yc,r,gd = DETECT, gm=0;
+
+    /* initialize graphics and local variables */
+     initgraph(&gd,&gm, "C:\\Tc\\BGI");
+      rectangle(100,100,150,150);
+      bfill(110,110,4,15);
+       getch();
+     closegraph();
+     return 0;
+    }

@@ -1,0 +1,69 @@
+#include <graphics.h>
+#include<string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+
+
+    int  main(void)
+   {
+    int gd = DETECT, gm=0,ch;
+    char c;
+    float shx,shy;
+    int x1=100,y1=100,x2=150,y2=100,x3=150,y3=150,x4=100,y4=150;
+    int sx1,sx2,sx3,sx4,sy1,sy2,sy3,sy4;
+     initgraph(&gd,&gm, "C:\\Tc\\BGI");
+     setcolor(RED);
+
+    // rectangle(100,100,200,200);
+    do{
+    line(x1,y1,x2,y2);
+    line(x2,y2,x3,y3);
+    line(x3,y3,x4,y4);
+    line(x4,y4,x1,y1);
+    printf("\n 1: X-shear	2: Y shear\nEnter ur choice");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+	case 1:
+	     printf("Enter X-shear factor :");
+	     scanf("%f",&shx);
+	     sx1=x1+(shx*y1);
+	     sy1=y1;
+	     sx2=x2+ (shx*y2);
+	     sy2=y2;
+	     sx3=x3+(shx*y3);
+	     sy3=y3;
+	     sx4=x4+ (shx*y4);
+	     sy4=y4;
+	    line(sx1,sy1,sx2,sy2);
+	    line(sx2,sy2,sx3,sy3);
+	    line(sx3,sy3,sx4,sy4);
+	    line(sx4,sy4,sx1,sy1);
+	    break;
+	case 2:
+	     printf("Enter Y-shear factor :");
+	     scanf("%f",&shy);
+	     sy1=y1+(shy*x1);
+	     sx1=x1;
+	     sy2=y2+ (shy*x2);
+	     sx2=x2;
+	     sy3=y3+(shy*x3);
+	     sx3=x3;
+	     sy4=y4+ (shy*x4);
+	     sx4=x4;
+	    line(sx1,sy1,sx2,sy2);
+	    line(sx2,sy2,sx3,sy3);
+	    line(sx3,sy3,sx4,sy4);
+	    line(sx4,sy4,sx1,sy1);
+	}
+	printf("\n continue Y/y or N/n?");
+	c=getche();
+	cleardevice();
+	clrscr();
+	}while(c!='n');
+     getch();
+     closegraph();
+     return 0;
+    }

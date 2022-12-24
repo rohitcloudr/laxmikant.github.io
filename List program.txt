@@ -1,0 +1,29 @@
+Programs for External
+1.      Develop an applet/application using List Components to add names of 10 different cities.
+2.	Write a program to demonstrate the use of GridLayout.
+3.	Write a program to demonstrate the use of BorderLayout.
+4.	Write a program to generate following output(GridBagLayout)
+
+
+	
+	
+
+
+5.	Write a program which creates Menu of different colors and disable menu item for Black color.
+6.	Write a program to develop a frame to select the different states of India using JComboBox.
+7.	Develop a program to demonstrate use of ScrollPane in Swing.
+8.	Develop a program to demonstrate the use of tree component.
+9.	Develop a program which will identify which key is pressed such as functional keys,arraow keys.
+10.	Develop a program to accept two numbers and display product of two numbers when user pressed “Multiply” button.
+11.	Write a program to change the background color of Applet when user performs events using Mouse.
+12.	Write a program to demonstrate the use of mouseDragged and mouseMoved method of MouseMotionListener.
+13.	Write a program using JTextField to perform addition of two numbers.
+14.	Write a program using JPasswordField to accept password from user and if the length is less than 6 characters then error message should be displayed “Password length must be >6 characters”
+15.	Develop a program using InetAddress class to retrieve IP address of computer when hostname is entered by the user.
+16.	Write a program using URL and URLConnection class to retrieve the date,content type,contentlength information of any enetered URL.
+17.	Write a program to develop prime number Server(Client will send any number to server,Server will send the response the number is prime or not)
+18.	Develop a program to create employee table in database having two columns “emp_id” and “emp_name”
+19.	Develop a program to display the name and roll_no of students from “Student table” having percentage >70.
+20.	Develop servlet program to print “Hello MSBTE” in browser window.
+21.	Develop a program to receive the parameter through HTML forms and send back received parameter to browser.
+

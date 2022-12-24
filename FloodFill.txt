@@ -1,0 +1,44 @@
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+
+    void floodfill4(int x,int y,int fc,int oldc)
+     {
+     int current;
+     current=getpixel(x,y);
+     if(current==oldc)
+     {
+	//setcolor(fc);
+	putpixel(x,y,fc);
+	delay(5);
+	floodfill4(x+1,y,fc,oldc);
+	floodfill4(x-1,y,fc,oldc);
+	floodfill4(x,y+1,fc,oldc);
+	floodfill4(x,y-1,fc,oldc);
+
+      }
+    }
+    int  main(void)
+   {
+    /* request auto detection */
+    int xc,yc,r,gd = DETECT, gm=0;
+
+    /* initialize graphics and local variables */
+     initgraph(&gd,&gm, "C:\\Tc\\BGI");
+    //  rectangle(100,100,150,150);
+    setcolor(5);
+    line(100,100,150,100);
+    setcolor(6);
+    line(150,100,150,150);
+    setcolor(7);
+    line(150,150,100,150);
+    setcolor(8);
+    line(100,150,100,100);
+
+      floodfill4(110,125,4,BLACK);
+       getch();
+     closegraph();
+     return 0;
+    }

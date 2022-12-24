@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#include<math.h>
+void main()
+{
+int gm,gd=DETECT;
+int i;
+float u;
+float px[4],py[4],cx,cy;
+initgraph(&gd,&gm,"c:\\tc\\bgi");
+printf("\n Enter four control points");
+for(i=0;i<=3;i++)
+{
+printf("enter the %d control point x and y coordinate",i);
+scanf("%f %f",&px[i],&py[i]);
+}
+setcolor(RED);
+line(px[0],py[0],px[1],py[1]);
+line(px[1],py[1],px[2],py[2]);
+line(px[2],py[2],px[3],py[3]);
+for(u=0.0;u<=1.0;u=u+0.005)
+{
+cx=(px[0]*pow(1-u,3))+(3*px[1]*u*pow(1-u,2))+(3*px[2]*pow(u,2)*(1-u))+(px[3]*pow(u,3));
+cy=(py[0]*pow(1-u,3))+(3*py[1]*u*pow(1-u,2))+(3*py[2]*pow(u,2)*(1-u))+(py[3]*pow(u,3));
+delay(50);
+putpixel(cx,cy,15);
+}
+getch();
+closegraph();
+}

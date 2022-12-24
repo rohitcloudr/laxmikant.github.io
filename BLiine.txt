@@ -1,0 +1,39 @@
+#include<graphics.h>
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int gd=DETECT,gm=0;
+ int x,y,k,x1,y1,x2,y2,dx,dy,tdx,tdy,dif,p;
+detectgraph(&gd,&gm);
+initgraph(&gd,&gm,"c:\\tc\\BGI");
+printf("\n enter x1 y1 x2 y2 ");
+scanf("%d %d %d %d",&x1,&y1,&x2,&y2);
+dx=x2-x1;
+dy=y2-y1;
+tdy=2*dy;tdx=2*dx;
+dif=tdy-tdx;
+x=x1;
+y=y1;
+p=tdy-dx;
+putpixel(x,y,4);
+for(k=0;k<dx;k++)
+{
+	if(p<0)
+{
+	 putpixel(x++,y,RED);
+	 // x++;
+
+		p=p+tdy;
+	}
+	else
+	{
+		putpixel(x++,y++,GREEN);
+	//x++;y++;
+		p=p+dif;
+	}
+	//printf("%d   %d\n",x,y);
+}
+getch();
+closegraph();
+}
